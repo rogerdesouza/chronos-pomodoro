@@ -1,36 +1,48 @@
 import './styles/theme.css';
 import './styles/global.css';
-
-import { Heading } from './components/Heading';
-import {
-  HomeIcon,
-  LightbulbIcon,
-  RefreshCwIcon,
-  TableConfigIcon,
-} from 'lucide-react';
+import { Container } from './components/Container';
 
 export function App() {
   return (
     <>
-      <Heading>
-        <button>
-          <HomeIcon />
-        </button>
-        <button>
-          <RefreshCwIcon />
-        </button>
-        <button>
-          <TableConfigIcon />
-        </button>
-        <button>
-          <LightbulbIcon />
-        </button>
-      </Heading>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eligendi
-        vitae sunt eum, ab sit ipsum, voluptas facilis quo unde provident?
-        Facere cumque ullam nulla cupiditate vel, laboriosam officiis voluptas?
-      </p>
+      <Container>
+        <section>Logo</section>
+      </Container>
+      <Container>
+        <section>Menu</section>
+      </Container>
+      <Container>
+        <section>Form</section>
+      </Container>
+      <Container>
+        <section>Footer</section>
+      </Container>
     </>
   );
 }
+
+// <div className="container-fluid">
+//   <div className="container">
+//     <div className="content">
+//       <section>
+//         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+//         hic enim soluta. Vel perspiciatis dolore eveniet voluptate ab hic
+//         nam ratione. Deleniti magni est beatae labore dolor ducimus
+//         consequatur perspiciatis?
+//       </section>
+//     </div>
+//   </div>
+// </div>
+
+// .container-fluid {
+//   margin: auto;
+// }
+
+// .container {
+//   max-width: 98rem;
+//   margin: 0 auto;
+// }
+
+// .content {
+//   margin: 3.2rem;
+// }
