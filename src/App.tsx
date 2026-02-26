@@ -8,7 +8,7 @@ export function App() {
   return (
     <>
       <Container>
-        <Logo>Logo</Logo>
+        <Logo />
       </Container>
       <Container>
         <section>Menu</section>
