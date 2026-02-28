@@ -10,8 +10,21 @@ import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
+import { Heading } from './components/Heading';
+import { useState } from 'react';
 
 export function App() {
+  // // lazy initialization
+  // // const [numero, setNumero] = useState(() => {
+  // //   return 0;
+  // // });
+  // const [numero, setNumero] = useState(0);
+
+  // function handleClick() {
+  //   // setNumero(1);
+  //   setNumero((prevState) => prevState + 1);
+  // }
+
   return (
     <>
       <Container>
