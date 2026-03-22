@@ -1,12 +1,27 @@
 import styles from './styles.module.css';
 
-import { HistoryIcon, HouseIcon, SettingsIcon, SunIcon } from 'lucide-react';
+import {
+  HistoryIcon,
+  HouseIcon,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+} from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 type AvailableThemes = 'dark' | 'light';
 
 export function Menu() {
-  const [theme, setTheme] = useState<AvailableThemes>('dark');
+  const [theme, setTheme] = useState<AvailableThemes>(() => {
+    const storageTheme =
+      (localStorage.getItem('theme') as AvailableThemes) || 'dark';
+    return storageTheme;
+  });
+
+  const nextThemeIcon = {
+    dark: <SunIcon />,
+    light: <MoonIcon />,
+  };
 
   // hook para atualizar a variável de tema
   function handleThemeChange(
@@ -23,10 +38,7 @@ export function Menu() {
   // hook para limpar e atualizar a página
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    // função de cleanup
-    return () => {
-      console.log('Função de cleanup');
-    };
+    localStorage.setItem('theme', theme);
   }, [theme]); // executa apenas quando o valor de theme muda
 
   return (
@@ -62,7 +74,7 @@ export function Menu() {
         title="Change theme"
         onClick={handleThemeChange}
       >
-        <SunIcon />
+        {nextThemeIcon[theme]}
       </a>
     </nav>
   );
